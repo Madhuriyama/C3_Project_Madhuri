@@ -71,10 +71,10 @@ class RestaurantTest {
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     @Test
-    public void total_order_value_with_price_items_selected_user() throws itemNotFoundException {
+    public void total_order_value_with_price_items_selected_user() {
 
-        List<String> selectedItems = Arrays.asList( "Sweet corn soup");
+        List<String> selectedItems = Arrays.asList( "Sweet corn soup","Vegetable lasagne");
 
-        assertEquals(119,restaurant.getTotalOrderValue(selectedItems));
+        assertEquals(388,restaurant.getTotalOrderValue(selectedItems));
     }
 }
