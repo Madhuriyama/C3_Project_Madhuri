@@ -2,7 +2,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
-
+import java.util.Arrays;
+import java.util.List;
 import java.time.LocalTime;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -68,4 +69,12 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    @Test
+    public void total_order_value_with_price_items_selected_user() throws itemNotFoundException {
+
+        List<String> selectedItems = Arrays.asList( "Sweet corn soup");
+
+        assertEquals(119,restaurant.getTotalOrderValue(selectedItems));
+    }
 }
